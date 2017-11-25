@@ -4,9 +4,10 @@ from .forms import MenuForm
 from menu.models import Menu, Union
 
 # Create your views here.
-def lista_peliculas(request):
+def lista_menus(request):
     publi= Menu.objects.all()
     return render(request,'menus/listar_publicacion.html',{'publi':publi})
+
 def menu_nuevo(request):
 
     if request.method == "POST":
