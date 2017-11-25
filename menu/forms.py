@@ -8,7 +8,7 @@ class MenuForm(forms.ModelForm):
         model = Menu
         fields = ('nombre', 'precio', 'platio')
 def __init__ (self, *args, **kwargs):
-        super(PeliculaForm, self).__init__(*args, **kwargs)
+        super(MenuForm, self).__init__(*args, **kwargs)
 #En este caso vamos a usar el widget checkbox multiseleccionable.
         self.fields["platio"].widget = forms.widgets.CheckboxSelectMultiple()
 #Podemos usar un texto de ayuda en el widget

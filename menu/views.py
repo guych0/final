@@ -13,10 +13,10 @@ def menu_nuevo(request):
     if request.method == "POST":
         formulario = MenuForm(request.POST)
         if formulario.is_valid():
-            menu = Menu.objects.create(nombre=formulario.cleaned_data['nombre'], precio = formulario.cleaned_data['precio'])
+            menu = Menu.objects.create(nombre=formulario.cleaned_data['nombre'], precio=formulario.cleaned_data['precio'])
             for plato_id in request.POST.getlist('platio'):
-                actuacion = Actuacion(plato_id=plato_id, menu_id = menu.id)
-                actuacion.save()
+                union = Union(plato_id=plato_id, menu_id = menu.id)
+                union.save()
             messages.add_message(request, messages.SUCCESS, 'Menu Ingresado Correctamente')
     else:
         formulario = MenuForm()
