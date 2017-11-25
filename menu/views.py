@@ -5,8 +5,8 @@ from menu.models import Menu, Union
 
 # Create your views here.
 def lista_peliculas(request):
-    publi= Pelicula.objects.all()
-    return render(request,'peliculas/listar_publicacion.html',{'publi':publi})
+    publi= Menu.objects.all()
+    return render(request,'menus/listar_publicacion.html',{'publi':publi})
 def menu_nuevo(request):
 
     if request.method == "POST":
@@ -19,6 +19,6 @@ def menu_nuevo(request):
             messages.add_message(request, messages.SUCCESS, 'Menu Ingresado Correctamente')
     else:
         formulario = MenuForm()
-    return render(request, 'peliculas/pelicula_editar.html', {'formulario': formulario})
+    return render(request, 'menus/menu_editar.html', {'formulario': formulario})
 
 # Create your views here.
